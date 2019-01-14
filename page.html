@@ -5,6 +5,49 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Page | Evie by unDraw</title>
 	<link rel='stylesheet' href='css/style.min.css' />
+<style type="text/css">
+
+.minimize__call{width: 60px;height: 80px;border-radius: 8px;box-shadow: 0 2px 4px 0 rgba(0,0,0,.11);background: #fff;position: relative;}
+.time{font-size: 12px;font-weight: 900;color: #5986ff;position: absolute;text-align: center;bottom: 12px;left: 0;width: 60px;}
+.icon-call_02{
+  	color: #5986FF;
+  	font-size: 22px;
+  	position: absolute;left: 19px;top: 20px;
+}
+[class^="icon-calling_act"].icon-calling_act_02{
+  -webkit-animation-delay: 0.1s;
+  -moz-animation-delay: 0.1s;
+  -o-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+[class^="icon-calling_act"].icon-calling_act_03{
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  -o-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+[class^="icon-calling_act"].icon-calling_act_04{  
+	-webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  -o-animation-delay: 0.5s;
+  animation-delay: 0.5s;}
+
+[class^="icon-calling_act"]{
+	-webkit-animation: loading 1.5s infinite ease-in-out;
+	-moz-animation: loading 1.5s infinite ease-in-out;
+	-o-animation: loading 1.5s infinite ease-in-out;
+  	animation: loading 1.5s infinite ease-in-out;
+  	color: #5986FF;
+  	font-size: 22px;
+  	position: absolute;left: 19px;top: 20px;
+}
+
+@keyframes loading {
+  50% {opacity: 0;}
+}
+
+</style>
+
 </head>
 <body>
 	<!-- navbar -->
@@ -26,7 +69,7 @@
 			<div class="container">
 				<div class="page__header__content">
 					<div class="page__header__content__inner" id='navConverter'>
-						<h1 class="page__header__title">Multi-purpose page</h1>
+						<h1 class="page__header__title">Transition</h1>
 						<p class="page__header__text">This is mostly a simple layout, rather than a complete page unlike the others. However this is a really useful starting point for anything you want to create.</p>
 					</div>
 				</div>
@@ -38,35 +81,44 @@
 		<div class="container">
 			<div class="page__inner">
 				<div class="page__main">
-					<div class="text-container text-container--center">
-						<h3 class="page__main__title">Contact Info</h3>
-						<form>
-						  <div class="double">
-						    <div class="half">
-						       <label for="first">First Name:</label>
-						    </div>
-						    <div class="half">
-						      <label for="second">Jordan</label>
-						    </div>
-						  </div>
-						  <div class="double">
-						    <div class="half">
-						       <label for="first">First Name:</label>
-						    </div>
-						    <div class="half">
-						      <label for="second">Jordan</label>
-						    </div>
-						  </div>
-						</form>
+
+					<!-- call动效 -->
+					<div class="minimize__call">
+						<i class="icon-call_02"></i>
+						<i class="icon-calling_act_02"></i>
+						<i class="icon-calling_act_03"></i>
+						<i class="icon-calling_act_04"></i>
+						<span class="time" id="timetext">00:00</span>
 					</div>
-					<div class ="right-align">
-						<button class ="button button__primary">Next</button>
-					</div>
+					<!-- call动效 -->
 				</div>
 			</div>
 		</div>
 	</div>
 
 <script src='js/app.min.js'></script>
+  <script>
+    var minute,second;//时 分 秒
+    minute=second=0;//初始化
+    var int;
+    int=setInterval(timer,1000);  
+  
+    function timer()//计时
+    {
+      second=second+1;
+
+
+      if(second>=60)
+      {
+        second=0;
+        minute=minute+1;
+      }
+      // if(second<10){
+      //   second="0"+second;
+      // }
+      document.getElementById('timetext').innerHTML=minute+':'+second;
+  
+    }
+  </script>
 </body>
 </html>
