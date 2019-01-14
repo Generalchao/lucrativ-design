@@ -14,7 +14,7 @@
 	box-shadow: 0 2px 4px 0 rgba(0,0,0,.11);
 	background: #fff;
 	position: relative;
-	margin: 0 auto;
+	margin: 20px auto 50px;
 }
 .time{
 	font-size: 12px;
@@ -62,6 +62,55 @@
   	-o-animation-delay: 0.9s;
   	animation-delay: 0.9s;
   }
+
+
+.box{
+	margin:20px auto 50px;
+	border-radius: 6px;
+	background: linear-gradient(#4660C9,#5DBFFF);
+	width: 320px;
+	height: 100px;
+	box-shadow: 0 1px 1px 0 rgba(255,255,255,.53),0 3px 6px 0 rgba(0,138,255,.27);
+	position: relative;
+}
+.loader{
+	position: absolute;
+	bottom: 0px;
+	left: 14px;
+	height: 30px;
+}
+.loader span{
+	display: block;
+	background: rgba(255,255,255,.5);
+	width: 8px;
+	margin-right: 7px;
+	float: left;
+	height: 100%;
+	transform: scaleY(.1);
+	transform-origin: 100% 100% 0;
+	-webkit-transform-origin:100% 100% 0;
+	opacity: .5;
+}
+.loader span{animation: load 1.2s var(--delay)  infinite linear;}
+.loader span:nth-child(14n+1) {--delay:calc(1.4s);}
+.loader span:nth-child(14n+2),.loader span:nth-child(14n+14) {--delay:calc(1.2s);}
+.loader span:nth-child(14n+3),.loader span:nth-child(14n+13) {--delay:calc(1.0s);}
+.loader span:nth-child(14n+4),.loader span:nth-child(14n+12) {--delay:calc(0.8s);}
+.loader span:nth-child(14n+5),.loader span:nth-child(14n+11) {--delay:calc(0.6s);}
+.loader span:nth-child(14n+6),.loader span:nth-child(14n+10) {--delay:calc(0.4s);}
+.loader span:nth-child(14n+7),.loader span:nth-child(14n+9) {--delay:calc(0.2s);}
+.loader span:nth-child(14n+8) {--delay:calc(0s);}
+@keyframes load {
+ 50% {
+ transform: scaleY(1);opacity: 1;
+}
+ 100% {
+ transform: scaleY(.1);
+}
+}
+
+
+
 </style>
 
 </head>
@@ -191,6 +240,106 @@
   	-o-animation-delay: 0.9s;
   	animation-delay: 0.9s;
   }</xmp></pre>
+						<!-- call动效 -->
+						<!-- call背景动效 -->
+<h3>Call background Transition</h3>
+<div class="box">
+	<div class="loader">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+</div>
+
+<pre><xmp><div class="box">
+	<div class="loader">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+</div></xmp></pre>
+
+<pre><xmp>.box{
+	margin: auto;
+	border-radius: 6px;
+	background: linear-gradient(#4660C9,#5DBFFF);
+	width: 320px;
+	height: 100px;
+	box-shadow: 0 1px 1px 0 rgba(255,255,255,.53),0 3px 6px 0 rgba(0,138,255,.27);
+	position: relative;
+}
+.loader{
+	position: absolute;
+	bottom: 0px;
+	left: 14px;
+	height: 30px;
+}
+.loader span{
+	display: block;
+	background: rgba(255,255,255,.5);
+	width: 8px;
+	margin-right: 7px;
+	float: left;
+	height: 100%;
+	transform: scaleY(.1);
+	transform-origin: 100% 100% 0;
+	-webkit-transform-origin:100% 100% 0;
+	opacity: .5;
+}
+.loader span{animation: load 1.2s var(--delay)  infinite linear;}
+.loader span:nth-child(14n+1) {--delay:calc(1.4s);}
+.loader span:nth-child(14n+2),.loader span:nth-child(14n+14) {--delay:calc(1.2s);}
+.loader span:nth-child(14n+3),.loader span:nth-child(14n+13) {--delay:calc(1.0s);}
+.loader span:nth-child(14n+4),.loader span:nth-child(14n+12) {--delay:calc(0.8s);}
+.loader span:nth-child(14n+5),.loader span:nth-child(14n+11) {--delay:calc(0.6s);}
+.loader span:nth-child(14n+6),.loader span:nth-child(14n+10) {--delay:calc(0.4s);}
+.loader span:nth-child(14n+7),.loader span:nth-child(14n+9) {--delay:calc(0.2s);}
+.loader span:nth-child(14n+8) {--delay:calc(0s);}
+@keyframes load {
+ 50% {
+ transform: scaleY(1);opacity: 1;
+}
+ 100% {
+ transform: scaleY(.1);
+}
+}</xmp></pre>
+
+<!-- call背景动效 -->
+
 
 					</div>
 
@@ -201,6 +350,11 @@
 			</div>
 		</div>
 	</div>
+
+
+
+
+
 
 
 	<div class="footer footer--dark">
